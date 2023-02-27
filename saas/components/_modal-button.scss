@@ -1,0 +1,8 @@
+.button {
+    @include font(16px, 700, 30px, 0.06em, background-primary);
+    font-family: inherit;
+
+    border-radius: 4px;
+    border: 0;
+    cursor: pointer;
+}

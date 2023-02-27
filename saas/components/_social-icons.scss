@@ -1,0 +1,38 @@
+.social-icons {
+    @extend %list;
+    display: flex;
+    justify-content: center;
+    &__item:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    &__link {
+        @include flexCentered;
+        @include setTransition('background-color, color');
+        width: 44px;
+        height: 44px;
+
+        border-radius: 50%;
+        color: getColor('icons');
+        
+        &:hover,
+        &:focus {
+            background-color: getColor('accent');
+            color: getColor('background-primary');
+        }
+    }
+    
+    .footer-wrapper & {
+        margin-top: 20px;
+        justify-content: center;
+        &__link {
+            color: getColor('background-primary');
+            background-color: rgba(getColor('background-primary'), 0.1);
+            
+            &:hover,
+            &:focus {
+                background-color: getColor('accent');
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.logo {
+    @extend %link;
+    display: inline-flex;
+
+    font-family: $studio-font-family;
+    @include font(26px, 700, 31px, 0.03em);
+
+    &__first-part {
+        color: getColor('accent');
+    }
+                
+    &__second-part {
+        color: getColor('background-additional');
+
+        &--inversed{
+            color: getColor('background-primary');
+        }
+    }
+}

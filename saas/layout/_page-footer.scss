@@ -1,0 +1,23 @@
+footer {
+    background: getColor('background-footer');
+}
+
+.footer-wrapper {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    // &__logo {
+    //     padding-top: 60px;
+    //     padding-bottom: 28px;
+    // }
+    &__address {
+        margin-top: 28px;
+    }
+    @media screen and (min-width: 768px) {
+        display: flex;
+        align-items: baseline;
+        &__join-us {
+            margin-left: 70px;
+        }
+    }
+}

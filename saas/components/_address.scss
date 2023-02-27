@@ -1,0 +1,27 @@
+.address {
+    &__item {
+        @extend %list;
+        
+        &:not(:last-child) {
+        margin-bottom: 9px;
+        }
+    }
+
+    &__link {
+        @include setTransition('color');
+        @include font(14px, 400, 24px, 0.03em, background-primary);
+        @extend %link;
+
+        font-style: normal;
+        color: rgba(getColor('background-primary'), 0.6);
+
+        &--geo {
+            color: getColor('background-primary');
+        }
+
+        &:hover,
+        &:focus {
+            color: getColor('accent');
+        }
+    }
+}

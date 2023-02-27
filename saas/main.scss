@@ -1,0 +1,12 @@
+@import './utils/variables';
+@import './utils/placeholders';
+@import './utils/mixins';
+@import './utils/fuctions';
+
+@import './base/common';
+@import './base/visually-hidden';
+
+
+@import './layout/page-header';
+@import './layout/page-footer';
+@import './components/index';

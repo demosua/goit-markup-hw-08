@@ -1,0 +1,12 @@
+.join-us {
+    &__title {
+            @include font(14px, 700, 16px, 0.03em, background-primary, none, uppercase);
+            margin-top: 60px;
+
+            @media screen and (min-width: 768px) {
+                display: inline-flex;
+                flex-wrap: wrap;
+                margin-bottom: 20px;
+            }
+    }
+}

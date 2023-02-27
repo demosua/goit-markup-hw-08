@@ -1,0 +1,52 @@
+.features-list {
+    @extend %list;
+    display: block;
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -15px;
+    }
+
+
+    &__title {
+        @include font(14px, 700, 16px, 0.03em, text-primary, none,
+            uppercase);
+        text-align: center;
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    &__item {
+        margin-bottom: 30px;
+        
+        @media screen and (min-width: 768px) {
+            width: calc((100% - 2 * 30px) / 2);
+            margin: 15px;
+        }
+
+        @media screen and (min-width: 1200px) {
+            width: calc((100% - 4 * 30px) / 4);
+            margin: 15px;
+        }
+
+
+    }
+
+    &__text {
+        @include font(14px, 400, 24px, 0.03em, text-secondary);
+        margin-top: 0px;
+    }
+
+    &__icon {
+        @include flexCentered;
+        height: 120px;
+        margin-bottom: 30px;
+        background-color: getColor('background-secondary');
+        border-radius: 4px;
+
+        @media screen and (min-width: 768px) {
+
+        }
+    }
+}
+

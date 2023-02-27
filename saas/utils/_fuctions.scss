@@ -1,0 +1,3 @@
+@function getColor($key:'text-primary') {
+    @return map-get($studio-colors, $key);
+}
