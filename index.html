@@ -18,9 +18,9 @@
     <link rel="stylesheet" href="./css/main.min.css" />
   </head>
   <body>
-    <header>
-      <div class="container">
-        <nav class="header-wrapper">
+    <header class="header">
+      <div class="container header__container">
+        <nav class="navigation">
           <a href="./index.html" class="logo"
             ><span class="logo logo__first-part">Web</span
             ><span class="logo logo__second-part">Studio</span></a
@@ -43,47 +43,57 @@
               ></use>
             </svg>
           </button>
-
-          <div class="menu" id="menu" data-menu>
-            <div class="navigation header-wrapper__navigation">
-              <ul class="navigation__list">
-                <li class="navigation__item">
-                  <a
-                    href="./index.html"
-                    class="navigation__link navigation__link--current"
-                    >Студія</a
-                  >
-                </li>
-                <li class="navigation__item">
-                  <a href="./portfolio.html" class="navigation__link"
-                    >Портфоліо</a
-                  >
-                </li>
-                <li class="navigation__item">
-                  <a href="./contacts.html" class="navigation__link">Контакти</a>
-                </li>
-              </ul>
-            </div>
-            <ul class="contacts">
-              <li class="contacts__item">
-                <a href="mailto:info@devstudio.com" class="contacts__link">
-                  <svg class="icon contacts__icon" width="16px" height="12px">
-                    <use href="./images/icons.svg#icon-envelope"></use>
-                  </svg>
-                  info@devstudio.com</a
-                >
-              </li>
-              <li class="contacts__item">
-                <a href="tel:+380961111111" class="contacts__link">
-                  <svg class="icon contacts__icon" width="10px" height="16px">
-                    <use href="./images/icons.svg#icon-smartphone"></use>
-                  </svg>
-                  +38 096 111 11 11</a
-                >
-              </li>
-            </ul>
-          </div>
         </nav>
+        <div class="menu" id="menu" data-menu>
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a
+                href="./index.html"
+                class="navigation__link navigation__link--current"
+                >Студія</a
+              >
+            </li>
+            <li class="navigation__item">
+              <a href="./portfolio.html" class="navigation__link">Портфоліо</a>
+            </li>
+            <li class="navigation__item">
+              <a href="./contacts.html" class="navigation__link">Контакти</a>
+            </li>
+          </ul>
+
+          <ul class="contacts">
+            <li class="contacts__item">
+              <a href="mailto:info@devstudio.com" class="contacts__link">
+                <svg class="icon contacts__icon" width="16px" height="12px">
+                  <use href="./images/icons.svg#icon-envelope"></use>
+                </svg>
+                info@devstudio.com</a
+              >
+            </li>
+            <li class="contacts__item">
+              <a href="tel:+380961111111" class="contacts__link">
+                <svg class="icon contacts__icon" width="10px" height="16px">
+                  <use href="./images/icons.svg#icon-smartphone"></use>
+                </svg>
+                +38 096 111 11 11</a
+              >
+            </li>
+          </ul>
+          <ul class="social-links">
+            <li class="social-links__item">
+              <a class="social-links__link" href="">Instagram</a>
+            </li>
+            <li class="social-links__item">
+              <a class="social-links__link" href="">Twitter</a>
+            </li>
+            <li class="social-links__item">
+              <a class="social-links__link" href="">Facebook</a>
+            </li>
+            <li class="social-links__item">
+              <a class="social-links__link" href="">LinkedIn</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
     <main>
@@ -157,15 +167,24 @@
           <h2 class="section__title">Чим ми займаємося</h2>
           <ul class="activities__list">
             <li class="activities__thumb">
-              <img src="./images/img-activities-370@1x-1.jpg" alt="Кодимо алгоритми" />
+              <img
+                src="./images/img-activities-370@1x-1.jpg"
+                alt="Кодимо алгоритми"
+              />
               <p class="activities__description">Десктопні додатки</p>
             </li>
             <li class="activities__thumb">
-              <img src="./images/img-activities-370@1x-2.jpg" alt="Розробляємо дизайн" />
+              <img
+                src="./images/img-activities-370@1x-2.jpg"
+                alt="Розробляємо дизайн"
+              />
               <p class="activities__description">Мобільні додатки</p>
             </li>
             <li class="activities__thumb">
-              <img src="./images/img-activities-370@1x-3.jpg" alt="Обираємо кольори" />
+              <img
+                src="./images/img-activities-370@1x-3.jpg"
+                alt="Обираємо кольори"
+              />
               <p class="activities__description">Дизайнерські рішення</p>
             </li>
           </ul>
@@ -177,10 +196,7 @@
           <h2 class="section__title">Наша команда</h2>
           <ul class="members__list">
             <li class="members__item">
-              <img
-                src="./images/img-members-450@1x-1.jpg"
-                alt="Член команди"
-              />
+              <img src="./images/img-members-450@1x-1.jpg" alt="Член команди" />
               <div class="members__description">
                 <h3 class="members__name">Ігор Дем'яненко</h3>
                 <p class="members__post">Product Designer</p>
@@ -234,10 +250,7 @@
               </div>
             </li>
             <li class="members__item">
-              <img
-                src="./images/img-members-450@1x-2.jpg"
-                alt="Член команди"
-              />
+              <img src="./images/img-members-450@1x-2.jpg" alt="Член команди" />
               <div class="members__description">
                 <h3 class="members__name">Ольга Рєпіна</h3>
                 <p class="members__post">Frontend Developer</p>
@@ -291,10 +304,7 @@
               </div>
             </li>
             <li class="members__item">
-              <img
-                src="./images/img-members-450@1x-3.jpg"
-                alt="Член команди"
-              />
+              <img src="./images/img-members-450@1x-3.jpg" alt="Член команди" />
               <div class="members__description">
                 <h3 class="members__name">Микола Тарасов</h3>
                 <p class="members__post">Marketing</p>
@@ -348,10 +358,7 @@
               </div>
             </li>
             <li class="members__item">
-              <img
-                src="./images/img-members-450@1x-4.jpg"
-                alt="Член команди"
-              />
+              <img src="./images/img-members-450@1x-4.jpg" alt="Член команди" />
               <div class="members__description">
                 <h3 class="members__name">Михайло Єрмаков</h3>
                 <p class="members__post">UI Designer</p>
@@ -624,7 +631,7 @@
         </button>
       </div>
     </div> -->
-    <script src="./js/modal.js"></script>
+    <!-- <script src="./js/modal.js"></script> -->
     <script src="./js/menu.js"></script>
   </body>
 </html>
