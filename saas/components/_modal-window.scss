@@ -1,0 +1,198 @@
+.modal {
+    @include setTransition('opacity, box-shadow');
+    @extend %absoluteCentered;
+
+    width: 528px;
+    height: 580px;
+    padding: 40px;
+
+    border-radius: 4px;
+    background-color: getColor(background-primary);
+
+    &:hover {
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    }
+    
+    &__link {
+        @include font(14px, 400, 24px, 0.03em, accent, underline);
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    &__button {
+        @include flexCentered();
+        @include setTransition('box-shadow,color');
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        margin: 0;
+    
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: transparent;
+        color: getColor('text-primary');
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+            color: getColor('accent');
+        }
+    }
+        @media screen and (max-width: 767px) {
+            width: 95vw;
+            height: 580px;
+            padding: 40px;
+        
+            &__link {
+                @include font(10px, 400, 14px, 0.03em, accent, underline);
+            }
+        }
+}
+
+
+
+.contacts-form {
+
+    &__title {
+        @include font(20px, 700, 23px, 0.03em);
+        display: block;
+        margin-bottom: 12px;
+
+        text-align: center;
+    }
+
+    &__checkbox-wrapper{
+        @include flexCentered;
+        margin-bottom: 30px;
+    }
+
+    &__checkbox-label {
+        display: inline-flex;
+    }
+
+    &__real-checkbox:focus + &__checkbox {
+        border: 2px solid getColor('accent');
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    &__real-checkbox:checked + &__checkbox {
+        background-color: getColor('accent');
+        border-color: getColor('accent');
+        color: getColor('background-primary');
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    &__checkbox {
+        display: inline-block;
+        justify-content: center;
+        @include setTransition('box-shadow, background-color, border-color,color');
+
+        background-color: getColor('background-primary');
+        color: transparent;
+        border-radius: 4px;
+        border: 2px solid getColor('text-primary');
+        background-size: contain;
+        background-origin: border-box;
+    }
+
+    &__text {
+        @include font(14px, 400, 24px, 0.03em, text-secondary);
+        display: inline-block;
+        margin-left: 7px;
+    }
+
+    &__button {
+        @include setTransition(box-shadow);
+        @include setTransition('box-shadow');
+        display: block;
+        margin: auto;
+        padding: 10px 52px;
+        color: getColor('background-primary');
+        background-color: getColor('accent');
+
+        &:hover {
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+}
+
+        @media screen and (max-width: 767px) {
+            .contacts-form{
+                &__text {
+                    display: flex;
+                    align-items: center;
+                    @include font(10px, 400, 14px, 0.03em, text-secondary);
+                }
+            }
+        }
+
+.form-label {
+    &__name {
+        @include font(12px, 400, 14px, 0.01em, 'text-secondary');
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    &__field {
+        @include setTransition('color');
+        position: relative;
+        display: block;
+    }
+
+    &__input {
+        @include setTransition('border-color');
+        display: block;
+        margin-bottom: 10px;
+        padding-left: 42px;
+        width: 100%;
+        height: 40px;
+        border-radius: 4px;
+        border: 1px solid rgba(getColor('text-primary'), 0.2);
+
+        &:focus {
+            border-color: getColor('accent');
+            outline: none;
+        }
+    }
+
+    &__inputarea {
+        @include setTransition('border-color');
+        display: block;
+        margin-bottom: 10px;
+        padding: 12px 16px;
+        width: 100%;
+        height: 120px;
+        resize: none;
+
+        border-radius: 4px;
+        border: 1px solid rgba(getColor('text-primary'), 0.2);
+
+        &:focus {
+            border: 1px solid getColor('accent');
+            outline: none;
+        }
+
+        ::placeholder {
+            @include font(12px, 400, 14px, 0.01em);
+            color: rgba(getColor('text-secondary'), 0.5)
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+    }
+
+    :focus + &__icon {
+        @include setTransition('color');
+        color: getColor('accent');
+    }
+}

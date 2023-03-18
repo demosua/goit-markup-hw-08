@@ -18,49 +18,57 @@
     <link rel="stylesheet" href="./css/main.min.css" />
   </head>
   <body>
-    <header>
-      <div class="container header-wrapper">
+    <header class="page-header">
+      <div class="container">
+        <!-- <nav class="navigation"> -->
         <a href="./index.html" class="logo"
           ><span class="logo logo__first-part">Web</span
           ><span class="logo logo__second-part">Studio</span></a
         >
-        <nav class="navigation header-wrapper__navigation">
-          <ul class="navigation__list">
-            <li class="navigation__item">
-              <a href="./index.html" class="navigation__link navigation__link"
-                >Студія</a
-              >
+        <button
+          class="menu-toggle js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg width="40" height="40">
+            <use class="icon-menu" href="./images/icons.svg#icon-menu"></use>
+          </svg>
+        </button>
+        <!-- </nav> -->
+        <div class="menu" id="menu" data-menu>
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a href="./index.html" class="menu__link">Студія</a>
             </li>
-            <li class="navigation__item">
-              <a
-                href="./portfolio.html"
-                class="navigation__link navigation__link--current"
+            <li class="menu__item">
+              <a href="./portfolio.html" class="menu__link menu__link--current"
                 >Портфоліо</a
               >
             </li>
-            <li class="navigation__item">
-              <a href="./contacts.html" class="navigation__link">Контакти</a>
+            <li class="menu__item">
+              <a href="./contacts.html" class="menu__link">Контакти</a>
             </li>
           </ul>
-        </nav>
-        <ul class="contacts">
-          <li class="contacts__item">
-            <a href="mailto:info@devstudio.com" class="contacts__link">
-              <svg class="icon contacts__icon" width="16px" height="12px">
-                <use href="./images/icons.svg#icon-envelope"></use>
-              </svg>
-              info@devstudio.com</a
-            >
-          </li>
-          <li class="contacts__item">
-            <a href="tel:+380961111111" class="contacts__link">
-              <svg class="icon contacts__icon" width="10px" height="16px">
-                <use href="./images/icons.svg#icon-smartphone"></use>
-              </svg>
-              +38 096 111 11 11</a
-            >
-          </li>
-        </ul>
+
+          <ul class="contacts">
+            <li class="contacts__item">
+              <a href="mailto:info@devstudio.com" class="contacts__link">
+                <svg class="icon contacts__icon" width="16px" height="12px">
+                  <use href="./images/icons.svg#icon-envelope"></use>
+                </svg>
+                info@devstudio.com</a
+              >
+            </li>
+            <li class="contacts__item">
+              <a href="tel:+380961111111" class="contacts__link">
+                <svg class="icon contacts__icon" width="10px" height="16px">
+                  <use href="./images/icons.svg#icon-smartphone"></use>
+                </svg>
+                +38 096 111 11 11</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
     <main>
@@ -70,7 +78,10 @@
 
           <ul class="filter">
             <li class="filter__item">
-              <button type="button" class="button filter__button--current">
+              <button
+                type="button"
+                class="button filter__button filter__button--current"
+              >
                 Усі
               </button>
             </li>
@@ -101,7 +112,7 @@
               <a class="cardset__link" href="">
                 <div class="cardset__thumb">
                   <img
-                    src="./images/example-1.jpg"
+                    src="./images/img-portfolio-450@x1-1.jpg"
                     alt="Приклад сайту"
                     width="370"
                   />
@@ -121,7 +132,7 @@
               <a class="cardset__link" href="">
                 <div class="cardset__thumb">
                   <img
-                    src="./images/example-2.jpg"
+                    src="./images/img-portfolio-450@x1-2.jpg"
                     alt="Баскетбольний поєдинок"
                     width="370"
                   />
@@ -143,7 +154,7 @@
               <a class="cardset__link" href="">
                 <div class="cardset__thumb">
                   <img
-                    src="./images/example-3.jpg"
+                    src="./images/img-portfolio-450@x1-3.jpg"
                     alt="Логоип ресторану"
                     width="370"
                   />
@@ -163,7 +174,7 @@
               <a class="cardset__link" href="">
                 <div class="cardset__thumb">
                   <img
-                    src="./images/example-4.jpg"
+                    src="./images/img-portfolio-450@x1-4.jpg"
                     alt="Навушники"
                     width="370"
                   />
@@ -182,7 +193,11 @@
             <li class="cardset__item">
               <a class="cardset__link" href="">
                 <div class="cardset__thumb">
-                  <img src="./images/example-5.jpg" alt="Коробки" width="370" />
+                  <img
+                    src="./images/img-portfolio-450@x1-5.jpg"
+                    alt="Коробки"
+                    width="370"
+                  />
                   <p class="cardset__reaction">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -199,7 +214,7 @@
               <a class="cardset__link" href="">
                 <div class="cardset__thumb">
                   <img
-                    src="./images/example-6.jpg"
+                    src="./images/img-portfolio-450@x1-6.jpg"
                     alt="Сайт з зображенням карти світу"
                     width="370"
                   />
@@ -219,7 +234,7 @@
               <a class="cardset__link" href="">
                 <div class="cardset__thumb">
                   <img
-                    src="./images/example-7.jpg"
+                    src="./images/img-portfolio-450@x1-7.jpg"
                     alt="Розворот журналу"
                     width="370"
                   />
@@ -239,7 +254,7 @@
               <a class="cardset__link" href="">
                 <div class="cardset__thumb">
                   <img
-                    src="./images/example-8.jpg"
+                    src="./images/img-portfolio-450@x1-8.jpg"
                     alt="Ярлик з написом Lab el tag"
                     width="370"
                   />
@@ -259,7 +274,7 @@
               <a class="cardset__link" href="">
                 <div class="cardset__thumb">
                   <img
-                    src="./images/example-9.jpg"
+                    src="./images/img-portfolio-450@x1-9.jpg"
                     alt="Руки на клавіатурі ноутбука"
                     width="370"
                   />
@@ -364,5 +379,65 @@
         </form>
       </div>
     </footer>
+    <div class="menu-container js-menu-container" id="mobile-menu">
+      <button class="menu-toggle js-close-menu">
+        <!-- aria-label="mobile menu switcher" -->
+        <svg width="40" height="40">
+          <use
+            class="menu-toggle__icon icon-cross"
+            href="./images/icons.svg#icon-cross"
+          ></use>
+        </svg>
+      </button>
+
+      <ul class="mobile-menu">
+        <li class="mobile-menu__item">
+          <a href="./index.html" class="mobile-menu__link">Студія</a>
+        </li>
+        <li class="mobile-menu__item">
+          <a
+            href="./portfolio.html"
+            class="mobile-menu__link mobile-menu__link--current"
+            >Портфоліо</a
+          >
+        </li>
+        <li class="mobile-menu__item">
+          <a href="./contacts.html" class="mobile-menu__link">Контакти</a>
+        </li>
+      </ul>
+      <ul class="contacts">
+        <li class="contacts__item">
+          <a href="tel:+380961111111" class="contacts__link">
+            +38 096 111 11 11</a
+          >
+        </li>
+        <li class="contacts__item">
+          <a href="mailto:info@devstudio.com" class="contacts__link">
+            info@devstudio.com</a
+          >
+        </li>
+      </ul>
+      <ul class="social-links">
+        <li class="social-links__item">
+          <a class="social-links__link" href="">Instagram</a>
+        </li>
+        <li class="social-links__item">
+          <a class="social-links__link" href="">Twitter</a>
+        </li>
+        <li class="social-links__item">
+          <a class="social-links__link" href="">Facebook</a>
+        </li>
+        <li class="social-links__item">
+          <a class="social-links__link" href="">LinkedIn</a>
+        </li>
+      </ul>
+    </div>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./js/menu.js"></script>
   </body>
 </html>

@@ -2,42 +2,99 @@
     min-height: 80px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 .page-header .container {
-    min-height: 80px;
+    // min-height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .navigation {
+    // display: flex;
+}
+
+.menu {
     display: flex;
     padding: 0;
     margin: 0;
-    list-style: none;
-    &__item{
+
+    &__item {
         @extend %list;
+        
+        &:not(:last-child) {
+                margin-right: 50px;
+        }
     }
 
-    
+    &__link {
+        @extend %link;
+        position: relative;
+        display: block;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        @include font(14px, 500, 16px, 0.02em, text-secondary);
+    }
 }
 
 @media (max-width: 767px) {
-    .navigation {
+    .menu {
         display: none;
     }
 }
 
 .contacts {
+    @extend %list;
+    @include font(12px, 500, 14px, 0.02em, text-secondary);
+    display: block;
     &__item {
         @extend %list;
     }
-    &__link{
-        padding: 10px;
+    
+    &__link {
         color: inherit;
-        text-decoration: none;
+        text-decoration: none;  
+    }
+}
+@media (max-width: 767px) {
+    .contacts {
+        @include font(24px, 500, 28px, 0.02em, text-secondary);
+        margin-top: 306px;
+        margin-bottom: 64px;
+
+        &__item:first-child {
+            @include font(34px, 500, 40px, 0.02em, accent);
+            margin-bottom: 32px;
+        }
+    }
+}
+
+
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    @extend %list;
+    &__item {
+        &:not(:last-child)::after {
+            content: "";
+            display: inline-block;
+            align-items: center;
+            height: 16px;
+            border-left: 1px solid getColor(text-secondary);
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+    }
+
+    &__link {
+        @extend %link;
+        @include font(18px, 500, 22px, 0.02em, accent);
+    }
+
+    @media screen and (min-width: 768px) {
+        display: none;
     }
 }
 
@@ -55,6 +112,12 @@
     border: none;
     border-radius: 50%;
     outline: none;
+}
+
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
 }
 
 .menu-button {
@@ -92,6 +155,7 @@
 .menu-toggle:hover,
 .menu-toggle:focus {
     background-color: rgba(0, 0, 0, 0.1);
+    fill: getColor(accent);
 }
 
 .menu-container {
@@ -100,8 +164,8 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    padding: 32px;
-    background-color: #3f51b5;
+    padding: 40px;
+    background-color: getColor(background-primary);
     z-index: 999;
 
     transform: translateX(100%);
@@ -116,7 +180,7 @@
     position: absolute;
     top: 16px;
     right: 16px;
-    color: #fff;
+    color: getColor(background-primary);
 }
 
 .mobile-menu {
@@ -125,167 +189,19 @@
     list-style: none;
 }
 
-.mobile-menu .link {
-    display: block;
-    padding: 10px;
-    color: #fff;
-    text-decoration: none;
+.mobile-menu {
+    &__link {
+        display: block;
+        padding: 16px 0 16px 0;
+        @extend %link;
+        @include setTransition('color');
+        @include font(40px, 500, 47px, 0.02em, text-primary);
+        &--current{
+            color: getColor('accent');
+        }
+        &:hover,
+        &:focus {
+            color: getColor('accent');
+        }
+    }
 }
-
-
-// .navigation {
-
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-    
-//         &__list {
-//             @extend %list;
-//             display: block;
-//         }
-    
-//         &__link {
-//             display: inline-flex;
-//             @include setTransition('color');
-//             @include font(40px, 500, 47px, 0.02em, text-primary);
-
-//             text-decoration: none;
-            
-
-//             &:hover,
-//             &:focus {
-//                 color: getColor('accent');
-//             }
-    
-//             &--current{
-//                 color: getColor('accent');
-//             }
-//         }
-        
-//         @media screen and (max-width: 767px) {
-//             &__item {
-//                 margin-top: 32px;
-//                 margin-bottom: 32px;
-//                 margin-left: 40px;
-        
-//             }
-//             &__item:last-child {
-//                     margin-bottom: 206px;
-//                 }
-//         }
-
-//         @media screen and (min-width: 768px) {
-//             &__item{
-//                 display: inline-flex;
-//                 align-items: center;
-//                 padding: 32px 0;
-//             }
-
-//             &__item:not(:last-child) {
-//                 margin-right: 50px;
-//             }
-            
-//             &__list {
-//                 display: inline-flex;
-//                 margin-left: 93px;
-//             }
-
-//             &__link {
-//                 position: relative;
-//                 display: block;
-
-//                 @include font(14px, 500, 16px, 0.02em, text-primary);
-
-//                 &--current {
-//                     &::after {
-//                         content: "";
-//                         display: block;
-//                         position: absolute;
-//                         bottom: 0;
-//                         left: 0;
-//                         width: 100%;
-//                         height: 4px;
-                
-//                         background-color: getColor('accent');
-//                         border-radius: 2px;
-//                     }
-//                 }
-//             }
-//         }
-// }
-
-
-// .contacts {
-//     @extend %list;
-//     display: flex;
-
-//     @media screen and (max-width: 767px) {
-//         flex-direction: column-reverse;
-//         margin-left: 40px;
-//         margin-bottom: 64px;
-
-//         &__item:last-child {
-//             margin-bottom: 32px;
-//             a {
-//                 @include font(34px, 500, 40px, 0.02em, accent);
-    
-//             }
-//         }
-
-//         &__icon {
-//             display: none;
-//         }
-//     }
-
-//     @media screen and (min-width: 768px) {
-//         margin-left: 305px;
-
-//         &__item:last-child {
-//                 margin-left: 40px;
-//         }
-
-//         &__link{
-//             @include flexCentered;
-//             @include setTransition('color');
-//             @include font(14px, 500, 16px, 0.02em, text-secondary);
-//         }
-
-//         &__link:hover,
-//         &__link:focus {
-//             color: getColor('accent');
-//         }
-
-//         &__icon {
-//             display: inline-block;
-//             margin-right: 10px;
-//         }
-//     }
-
-// }
-
-// .social-links {
-//     display:flex;
-//     margin-left: 40px;
-//     margin-bottom: 48px;
-//     @extend %list;
-//     &__item {
-//         &:not(:last-child)::after {
-//             content: "";
-//             display: inline-block;
-//             align-items: center;
-//             height: 16px;
-//             border-left: 1px solid getColor(text-secondary);
-//             margin-right: 10px;
-//             margin-left: 10px;
-//         }
-//     }
-
-//     &__link {
-//         @extend %link;
-//         @include font(18px, 500, 22px, 0.02em, accent);
-//     }
-
-//     @media screen and (min-width: 768px) {
-//         display: none;
-//     }
-// }
