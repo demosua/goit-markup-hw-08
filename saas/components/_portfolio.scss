@@ -12,6 +12,15 @@
     &__item {
         width: 370px;
         margin: 15px;
+                @media screen and (min-width: 768px) {
+                        width: calc((100% - 2 * 30px) / 2);
+                        margin: 15px;
+                    }
+                
+                    @media screen and (min-width: 1200px) {
+                        width: calc((100% - 4 * 30px) / 4);
+                        margin: 15px;
+                    }
     }
 
     &__link {

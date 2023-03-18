@@ -1,6 +1,4 @@
 .subscribe-form {
-    margin-left: auto;
-
     &__call {
         @include font(14px, 700, 16px, 0.03em, background-primary, none, uppercase);
         display: block;
@@ -28,11 +26,10 @@
     }
 
     &__button {
-        @include flexCentered(inline-flex);
         @include setTransition('box-shadow');
-        margin-top: 20px;
-        margin-left: 12px;
+        @include flexCentered(inline-flex);
         padding: 10px 28px;
+        margin-top: 20px;
         background-color: getColor('accent');
         color: getColor('background-primary');
 
@@ -43,5 +40,36 @@
 
     &__icon {
         margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .subscribe-form__button{
+        margin-top: 20px;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .subscribe-form{
+     margin: 0 auto;   
+    }
+    .subscribe-form__input {
+        display: block;   
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .subscribe-form {
+        margin: 0;
+        margin-left: auto;
+    }
+
+    .subscribe-form__input {
+        display: inline-flex;
+    }
+
+    .subscribe-form__button {
+        margin-left: 12px;
+        margin-top: 0px;
     }
 }

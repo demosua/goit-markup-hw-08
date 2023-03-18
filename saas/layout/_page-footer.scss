@@ -6,18 +6,23 @@ footer {
     text-align: center;
     padding-top: 60px;
     padding-bottom: 60px;
-    // &__logo {
-    //     padding-top: 60px;
-    //     padding-bottom: 28px;
-    // }
+    
     &__address {
         margin-top: 28px;
     }
+
     @media screen and (min-width: 768px) {
         display: flex;
+        flex-wrap: wrap;
         align-items: baseline;
+        justify-content: space-between;
         &__join-us {
             margin-left: 70px;
         }
     }
+
+        @media screen and (min-width: 1200px) {
+            text-align: left;
+        }
+
 }
