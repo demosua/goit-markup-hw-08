@@ -227,16 +227,14 @@ footer {
 
 .social-links {
   display: flex;
-  justify-content: space-between;
 }
-.social-links__item:not(:last-child)::after {
-  content: "";
-  display: inline-block;
-  align-items: center;
-  height: 16px;
+.social-links__item {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+}
+.social-links__item:not(:first-child) {
   border-left: 1px solid #757575;
-  margin-right: 10px;
-  margin-left: 10px;
 }
 .social-links__link {
   font-size: 18px;

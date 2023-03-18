@@ -79,17 +79,14 @@
 
 .social-links {
     display: flex;
-    justify-content: space-between;
     @extend %list;
-    &__item {
-        &:not(:last-child)::after {
-            content: "";
-            display: inline-block;
-            align-items: center;
-            height: 16px;
+
+    &__item{
+        display: flex;
+        justify-content: center;
+        width: 25%;
+        &:not(:first-child){
             border-left: 1px solid getColor(text-secondary);
-            margin-right: 10px;
-            margin-left: 10px;
         }
     }
 
