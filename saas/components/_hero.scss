@@ -3,15 +3,7 @@
     background: getColor('background-footer');
     text-align: center;
 
-    @media screen and (min-width: 768px) {
-        padding: 200px 0px;
-        background: getColor('background-footer');
-        text-align: center;
-    }
-
-
     &__title {
-
         @include font(26px, 900, 42px, 0.06em, background-primary,
                 none, uppercase);
         margin-bottom: 30px;
@@ -19,22 +11,12 @@
         margin-right: auto;
 
         text-align: center;
-
-        @media screen and (min-width: 768px) {
-            @include font(44px, 900, 60px, 0.06em, background-primary,
-                    none, uppercase);
-            max-width: 696px;
-        }
     }
 
     &__button {
         padding: 10px 24px;
         background-color: getColor('accent');
         color: getColor('background-primary');
-
-        @media screen and (min-width: 768px) {
-            padding: 10px 52px;
-        }
     }
 }
 
@@ -49,4 +31,21 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+@media screen and (min-width: 768px) {
+    .hero {
+        padding: 200px 0px;
+        background: getColor('background-footer');
+        text-align: center;
+    }
+
+    .hero__title{
+        @include font(44px, 900, 60px, 0.06em, background-primary, none, uppercase);
+        max-width: 696px;
+    }
+
+    .hero__button {
+        padding: 10px 52px;
+    }
 }

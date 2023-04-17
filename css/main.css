@@ -23,16 +23,14 @@ body {
 }
 
 .container {
-  min-width: 320px;
-  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
 }
 @media screen and (min-width: 480px) {
   .container {
-    width: 450px;
+    width: 480px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -44,16 +42,6 @@ body {
   .container {
     width: 1200px;
   }
-}
-
-.icon {
-  fill: currentColor;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 
 h1,
@@ -72,6 +60,16 @@ ul {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
+}
+
+.icon {
+  fill: currentColor;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .visually-hidden {
@@ -153,6 +151,15 @@ footer {
   opacity: 0;
   visibility: none;
   pointer-events: none;
+}
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  transition: opacity 250ms var(--timing-function), visibility 250ms var(--timing-function);
 }
 
 .page-header {
@@ -434,13 +441,6 @@ footer {
   background: #2F303A;
   text-align: center;
 }
-@media screen and (min-width: 768px) {
-  .hero {
-    padding: 200px 0px;
-    background: #2F303A;
-    text-align: center;
-  }
-}
 .hero__title {
   font-size: 26px;
   font-weight: 900;
@@ -454,27 +454,10 @@ footer {
   margin-right: auto;
   text-align: center;
 }
-@media screen and (min-width: 768px) {
-  .hero__title {
-    font-size: 44px;
-    font-weight: 900;
-    line-height: 1.3636363636;
-    letter-spacing: 0.06em;
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
-    max-width: 696px;
-  }
-}
 .hero__button {
   padding: 10px 24px;
   background-color: #18A0FB;
   color: #ffffff;
-}
-@media screen and (min-width: 768px) {
-  .hero__button {
-    padding: 10px 52px;
-  }
 }
 
 .overlay {
@@ -488,6 +471,26 @@ footer {
   background-size: cover;
 }
 
+@media screen and (min-width: 768px) {
+  .hero {
+    padding: 200px 0px;
+    background: #2F303A;
+    text-align: center;
+  }
+  .hero__title {
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1.3636363636;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    max-width: 696px;
+  }
+  .hero__button {
+    padding: 10px 52px;
+  }
+}
 .section {
   padding-top: 60px;
   padding-bottom: 60px;
