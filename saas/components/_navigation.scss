@@ -29,16 +29,17 @@
         padding-top: 32px;
         padding-bottom: 32px;
         @include font(14px, 500, 16px, 0.02em, text-secondary);
+        margin-left: 10px;
 
         &--current::after {
             content: "";
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 4px;
-        
             bottom: 0;
             left: 0;
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 4px;
+            
             background-color: getColor(accent);
             border-radius: 2px;
         }
@@ -52,7 +53,7 @@
 
 .contacts {
     @extend %list;
-    @include font(12px, 500, 14px, 0.02em, text-secondary);
+    @include font(8px, 500, 10px, 0.02em, text-secondary);
     display: block;
 
     &__item {
@@ -78,113 +79,28 @@
 }   
 
 .social-links {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    margin-bottom: 100px;
+    margin-left: 40px;
     display: flex;
+    flex-wrap: nowrap;
+    width: 100vw;
+
     @extend %list;
 
     &__item{
-        display: flex;
-        justify-content: center;
-        width: 25%;
         &:not(:first-child){
-            border-left: 1px solid getColor(text-secondary);
+            border-left: 2px solid getColor(text-secondary);
+            margin: 0 10px;
         }
     }
 
     &__link {
         @extend %link;
-        @include font(18px, 500, 22px, 0.02em, accent);
-    }
-}
-
-.menu-toggle {
-    min-height: 40px;
-    min-width: 40px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: 0;
-    padding: 0;
-    background-color: transparent;
-    cursor: pointer;
-    border: none;
-    border-radius: 50%;
-    outline: none;
-}
-
-
-.menu-button {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
-
-    & .icon-cross {
-        display: none;
-    }
-
-    &.is-open .icon-cross{
-        display: block;
-    }
-
-    &.is-open .icon-menu {
-        display: none;
-    }
-}
-
-.menu-toggle:hover,
-.menu-toggle:focus {
-    background-color: rgba(0, 0, 0, 0.1);
-    fill: getColor(accent);
-}
-
-.menu-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    padding: 40px;
-    background-color: getColor(background-primary);
-    z-index: 999;
-
-    transform: translateX(100%);
-    transition: transform 250ms ease-in-out;
-}
-
-.menu-container.is-open {
-    transform: translateX(0);
-}
-
-.menu-container .menu-toggle {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    color: getColor(background-primary);
-}
-
-.mobile-menu {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.mobile-menu {
-    &__link {
-        display: block;
-        padding: 16px 0 16px 0;
-        @extend %link;
-        @include setTransition('color');
-        @include font(40px, 500, 47px, 0.02em, text-primary);
-        &--current{
-            color: getColor('accent');
-        }
-        &:hover,
-        &:focus {
-            color: getColor('accent');
-        }
+        @include font(1em, 500, 1em, 0.02em, accent);
     }
 }
 
@@ -199,7 +115,7 @@
 
     .contacts {
         @include font(24px, 500, 28px, 0.02em, text-secondary);
-        margin-top: 306px;
+        margin-top: 300px;
         margin-bottom: 64px;
 
         &__item:first-child {
@@ -214,10 +130,6 @@
         display: none;
     }
 
-    .menu-button {
-        display: none;
-    }
-    
     .menu__list {
         display: flex;
         margin-left: 88px;
@@ -235,6 +147,7 @@
         display: none;
     }
 }
+
 @media screen and (min-width: 1200px) {
     .menu__list {
         display: flex;
@@ -246,17 +159,16 @@
         align-items: center;
         margin-left: 305px;
 
-        // align-self: center;
         &__item{
             align-items: center;
         }
+
         &__item:first-child {
             margin-bottom: 0px;
         }
-        &__item:last-child {
 
+        &__item:last-child {
             margin-left: 40px;
         }
     }
-
 }

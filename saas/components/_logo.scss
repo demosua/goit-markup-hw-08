@@ -1,9 +1,9 @@
 .logo {
     @extend %link;
-    display: inline-flex;
+    display: inline-block;
 
     font-family: $studio-font-family;
-    @include font(26px, 700, 31px, 0.03em);
+    @include font(24px, 700, 28px, 0.03em, background-primary);
 
     &__first-part {
         color: getColor('accent');
@@ -16,4 +16,8 @@
             color: getColor('background-primary');
         }
     }
+
+    @media screen and (min-width: 1200px) {
+        @include font(26px, 700, 32px, 0.03em, background-primary);
+      }
 }
