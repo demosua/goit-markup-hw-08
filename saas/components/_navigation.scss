@@ -74,7 +74,7 @@
 
     &__link:hover,
     &__link:focus {
-        color: getColor(accent);;
+        color: getColor(accent);
     }
 }   
 
@@ -92,15 +92,27 @@
     @extend %list;
 
     &__item{
-        &:not(:first-child){
-            border-left: 2px solid getColor(text-secondary);
-            margin: 0 10px;
-        }
+        // &:not(:first-child){
+        //     border-left: 2px solid getColor(text-secondary);
+        //     margin: 0 10px;
+        // }
+        &:not(:first-child)::before {
+            content: "";
+            display: block;
+            position: relative;
+            top: 0;
+            left: -20px;
+            width: 1px;
+            height: 22px;
+            background-color: red; // rgba(33, 33, 33, 0.2);
+          }
     }
 
+      
     &__link {
         @extend %link;
         @include font(1em, 500, 1em, 0.02em, accent);
+
     }
 }
 
